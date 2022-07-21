@@ -16,6 +16,7 @@ public class LucilorApplicationConfig {
 		//ApplicationContext context = new AnnotationConfigApplicationContext(SpringDataJpaConfig.class);
 		//AccountInformationService service = context.getBean(AccountInformationService.class);
 	}
+	
 //
 //	@Bean
 //	public DataSource datasource() {

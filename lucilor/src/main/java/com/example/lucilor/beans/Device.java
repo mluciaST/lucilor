@@ -1,8 +1,21 @@
 package com.example.lucilor.beans;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class Device {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int phoneNumber;
+	@Column
     private String phoneModel;
+	@Column
     private String phoneNickname;
 
     public Device() {}
@@ -38,15 +51,11 @@ public class Device {
         this.phoneNickname = phoneNickname;
     }
 
-
-
-    @Override
-    public String toString() {
-        return "Device [phoneNumber=" + phoneNumber + 
-               ", phoneModel=" + phoneModel + 
-               ", phoneNickname=" + phoneNickname + 
-               "]";
-    }
+	@Override
+	public String toString() {
+		return "Device [phoneNumber=" + phoneNumber + ", phoneModel=" + phoneModel + ", phoneNickname=" + phoneNickname
+				+ "]";
+	}
 
 }
 

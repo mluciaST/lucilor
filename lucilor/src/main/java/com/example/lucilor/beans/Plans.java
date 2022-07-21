@@ -14,19 +14,19 @@ public class Plans {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int planNumber;
-	@Column(name = "cloudstorage")
+	@Column
     private int cloudStorage;
 	@Column
     private String description;
 	@Column
     private int devices;
-    @Column(name = "mobilehotspotdata")
+    @Column
     private int mobileHotspotData;
-    @Column (name = "networkaccess")
+    @Column
     private int networkAccess;
-    @Column (name = "plancost")
+    @Column
     private double planCost;
-    @Column (name = "plannumber")
+    @Column
     private String planName;
     
 
@@ -110,17 +110,13 @@ public class Plans {
         this.planNumber = planNumber;
     }
 
-    @Override
-    public String toString() {
-        return "Plans [cloudStorage=" + cloudStorage +
-                ", description=" + description +
-                ", devices=" + devices +
-                ", mobileHotspotData" + mobileHotspotData +
-                ", networkAccess" + networkAccess +
-                ", planCost" + planCost +
-                ", planName" + planName +
-                ", planNumber" + planNumber +
-                "]";
-    }
+	@Override
+	public String toString() {
+		return "Plans [planNumber=" + planNumber + ", cloudStorage=" + cloudStorage + ", description=" + description
+				+ ", devices=" + devices + ", mobileHotspotData=" + mobileHotspotData + ", networkAccess="
+				+ networkAccess + ", planCost=" + planCost + ", planName=" + planName + "]";
+	}
+
+    
 
 }

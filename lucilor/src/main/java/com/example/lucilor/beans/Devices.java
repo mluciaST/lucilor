@@ -1,26 +1,39 @@
 package com.example.lucilor.beans;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class Devices {
-    private int accountNumber;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int planNumber;
+	@Column
     private int devicesID;
+	@Column
     private int phoneNumber;
 
     public Devices() {
     }
 
-    public Devices(int accountNumber, int devicesID, int phoneNumber) {
+    public Devices(int planNumber, int devicesID, int phoneNumber) {
         super();
-        this.accountNumber = accountNumber;
+        this.planNumber = planNumber;
         this.devicesID = devicesID;
         this.phoneNumber = phoneNumber;
     }
 
-    public int getAccountNumber() {
-        return accountNumber;
+    public int getplanNumber() {
+        return planNumber;
     }
 
-    public void setAccountNumber(int accountNumber) {
-        this.accountNumber = accountNumber;
+    public void setplanNumber(int planNumber) {
+        this.planNumber = planNumber;
     }
 
     public int getDevicesID() {
@@ -39,9 +52,10 @@ public class Devices {
         this.phoneNumber = phoneNumber;
     }
 
-    @Override
-    public String toString() {
-        return "Devices [accountNumber=" + accountNumber +
-                "]";
-    }
+	@Override
+	public String toString() {
+		return "Devices [planNumber=" + planNumber + ", devicesID=" + devicesID + ", phoneNumber=" + phoneNumber + "]";
+	}
+    
+    
 }
