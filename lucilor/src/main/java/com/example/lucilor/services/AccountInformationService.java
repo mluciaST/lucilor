@@ -12,16 +12,16 @@ import com.example.lucilor.data.AccountInformationRepository;
 @Service
 public class AccountInformationService {
     
-    @Autowired
-    public AccountInformation repository;
-
-    public List<AccountInformation> {
-        return repository.findAll();
-    }
-
-    @Transactional
-    public AccountInformation add(AccountInformation accountInformation) {
-        return repository.save(accountInformation);
-    }
-
+//    @Autowired
+//    public AccountInformation repository;
+//
+//    public List<AccountInformation> {
+//        return repository.findAll();
+//    }
+//
+//    @Transactional
+//    public AccountInformation add(AccountInformation accountInformation) {
+//        return repository.save(accountInformation);
+//    }
+//
 }

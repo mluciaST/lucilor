@@ -14,13 +14,19 @@ public class Plans {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int planNumber;
+	@Column(name = "cloudstorage")
     private int cloudStorage;
+	@Column
     private String description;
+	@Column
     private int devices;
     @Column(name = "mobilehotspotdata")
     private int mobileHotspotData;
+    @Column (name = "networkaccess")
     private int networkAccess;
+    @Column (name = "plancost")
     private double planCost;
+    @Column (name = "plannumber")
     private String planName;
     
 
