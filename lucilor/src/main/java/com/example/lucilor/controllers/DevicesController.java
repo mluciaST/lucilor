@@ -20,7 +20,15 @@ public class DevicesController {
 	DevicesService devicesService;
 	
 	@GetMapping
-	public ResponseEntity<List<Devices>> getDevices() {
-		return new ResponseEntity<List<Devices>>(devicesService.findAll(), HttpStatus.OK);
+	public ResponseEntity<List<DevicesModel>>findAll(){
+		List<DevicesModel> models = devicesService.findAll();
+		logger.debug(`Retrieved Models ${models}`);
+
+		return new ResponseEntity<List<DevicesModel>>(models, HttpStatus.OK);
+	}
+
+	@PostMapping
+	public ResponseEntity<Devices> save(@ResponseBody Devices devices){
+		return new ResponseEntity<Devices>(devicesService.save(devices), HttpStatus.CREATED);
 	}
 }

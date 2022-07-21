@@ -19,9 +19,19 @@ public class DeviceController {
 	@Autowired
 	DeviceService deviceService;
 	
+	private static final Logger logger = Logger.getLogger(DeviceController.class);
+
 	@GetMapping
-	public ResponseEntity<List<Device>> getDevice() {
-		return new ResponseEntity<List<Device>>(deviceService.findAll(), HttpStatus.OK);
+	public ResponseEntity<List<DeviceModel>>findAll(){
+		List<DeviceModel> models = deviceService.findAll();
+		logger.debug(`Retrieved Models ${models}`);
+
+		return new ResponseEntity<List<DeviceModel>>(models, HttpStatus.OK);
+	}
+
+	@PostMapping
+	public ResponseEntity<Device> save(@ResponseBody Device device){
+		return new ResponseEntity<Device>(deviceService.save(device), HttpStatus.CREATED);
 	}
 
 }

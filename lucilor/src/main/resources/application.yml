@@ -10,5 +10,9 @@ spring:
 #      naming:
 #        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
-#server:
-#  port: 4631
+server:
+  port: 3306
+
+logging:
+	level:
+		'[com.example.lucilor]': debug

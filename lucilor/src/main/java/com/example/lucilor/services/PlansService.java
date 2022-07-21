@@ -14,7 +14,19 @@ public class PlansService {
     @Autowired
     private PlansRepository repository;
 
-    public List<Plans> findAll() {
-        return repository.findAll();
+    public List<Plans> getDinos() {
+		return repo.findAll();
+	}
+
+	public Plans save(Plans plans){
+		return repo.save(account);
+	}
+
+    public List<Plans> findByPlanSimilar(Int planNumber){
+        return repo.findByPlanSimilar(planNumber);
+    }
+
+    public List<Plans> findByNameSimilar(String name){
+        return repo.findByNameSimilar(name);
     }
 }

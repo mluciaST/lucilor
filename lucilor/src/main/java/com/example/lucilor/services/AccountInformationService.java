@@ -11,17 +11,22 @@ import com.example.lucilor.data.AccountInformationRepository;
 
 @Service
 public class AccountInformationService {
-    
-//    @Autowired
-//    public AccountInformation repository;
-//
-//    public List<AccountInformation> {
-//        return repository.findAll();
-//    }
-//
-//    @Transactional
-//    public AccountInformation add(AccountInformation accountInformation) {
-//        return repository.save(accountInformation);
-//    }
-//
+    @Autowired
+	AccountInformationRepository repo;
+	
+	public List<AccountInformation> getDinos() {
+		return repo.findAll();
+	}
+
+	public AccountInformation save(AccountInformation dino){
+		return repo.save(account);
+	}
+
+    public List<AccountInformation> findByNameSimilar(String name){
+        return repo.findByNameSimilar(name);
+    }
+
+    public List<AccountInformation> findByEmailSimilar(String email){
+        return repo.findByEmailSimilar(email);
+    }
 }

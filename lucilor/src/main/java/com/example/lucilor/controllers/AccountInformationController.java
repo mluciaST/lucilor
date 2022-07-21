@@ -18,8 +18,18 @@ public class AccountInformationController {
 	@Autowired
 	AccountInformationService accountInfoService;
 	
-//	@GetMapping
-//	public ResponseEntity<List<AccountInformation>> getAccountInformation() {
-//		return new ResponseEntity<List<AccountInformation>>(accountInfoService.findAll(), HttpStatus.OK);
-//	}
+	private static final Logger logger = Logger.getLogger(AccountInformationController.class);
+
+	@GetMapping
+	public ResponseEntity<List<AccountInformationModel>>findAll(){
+		List<AccountInformationModel> models = accountInfoService.findAll();
+		logger.debug(`Retrieved Models ${models}`);
+
+		return new ResponseEntity<List<AccountInformationModel>>(models, HttpStatus.OK);
+	}
+
+	@PostMapping
+	public ResponseEntity<AccountInformation> save(@ResponseBody AccountInformation account){
+		return new ResponseEntity<AccountInformation>(accountInfoService.save(account), HttpStatus.CREATED);
+	}
 }

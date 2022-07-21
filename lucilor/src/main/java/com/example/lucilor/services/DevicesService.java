@@ -14,7 +14,19 @@ public class DevicesService {
     @Autowired
     private DevicesRepository repository;
 
-    public List<Devices> findAll() {
-        return repository.findAll();
+    public List<Devices> getDinos() {
+		return repo.findAll();
+	}
+
+	public Devices save(Devices devices){
+		return repo.save(account);
+	}
+
+    public List<Devices> findByPhoneSimilar(Int phone){
+        return repo.findByPhoneSimilar(phone);
+    }
+
+    public List<Devices> findByPlanSimilar(Int planNumber){
+        return repo.findByPlanSimilar(planNumber);
     }
 }
