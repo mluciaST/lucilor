@@ -7,5 +7,5 @@ import com.example.lucilor.beans.Devices;
 
 @Repository
 public interface DevicesRepository extends JpaRepository<Devices, Integer> {
-
+	
 }
