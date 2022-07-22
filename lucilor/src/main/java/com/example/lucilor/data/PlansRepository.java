@@ -13,8 +13,8 @@ import com.example.lucilor.beans.Plans;
 @Repository
 public interface PlansRepository extends JpaRepository<Plans, Integer> {
 
-    // Find phone plan by plan number
-    //@Query("plan FROM phonePlan plan WHERE plan.planNumber = :planNumber")
-    List<Plans> findByPlanNumber(int planNumber);
+    public List<Plans> findByPlanSimilar(int planNumber);
+    
+    public List<Plans> findByNameSimilar(int name);
 
 }

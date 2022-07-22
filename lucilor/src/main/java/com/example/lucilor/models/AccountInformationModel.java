@@ -1,48 +1,46 @@
-package com.example.lucilor.beans;
+package com.example.lucilor.models;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table
-public class AccountInformation {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int accountNumber;
-	@Column
-    private String addressLine1;
-	@Column
-    private String addressLine2;
-	@Column
-    private String city;
-	@Column
-    private LocalDate dateOfBirth;
-	@Column
-    private String email;
-	@Column
-    private String firstName;
-	@Column
-    private String lastName;
-	@Column
-    private int phoneNumber;
-	@Column
-    private int plans;
-	@Column
-    private String state;
-	@Column
-    private int zip;
+import com.example.lucilor.beans.AccountInformation;
 
-    public AccountInformation() {
+public class AccountInformationModel {
+	private int accountNumber;
+	private String addressLine1;
+	private String addressLine2;
+	private String city;
+	private LocalDate dateOfBirth;
+	private String email;
+	private String firstName;
+	private String lastName;
+	private int phoneNumber;
+	private String state;
+	private int zip;
+	private Set<PlansModel> plans;
+
+    public AccountInformationModel() {
+    	super();
+    }
+    
+    public AccountInformationModel(AccountInformation accountInfo) {
+    	this.accountNumber = accountInfo.getAccountNumber();
+    	this.addressLine1 = accountInfo.getAddressLine1();
+    	this.addressLine2 = accountInfo.getAddressLine2();
+    	this.city = accountInfo.getCity();
+    	this.dateOfBirth = accountInfo.getDateOfBirth();
+    	this.email = accountInfo.getEmail();
+    	this.firstName = accountInfo.getFirstName();
+    	this.lastName = accountInfo.getLastName();
+    	this.phoneNumber = accountInfo.getPhoneNumber();
+    	this.state = accountInfo.getState();
+    	this.zip = accountInfo.getZip();
     }
 
-    public AccountInformation(int accountNumber, String addressLine1, String addressLine2, String city,
-            LocalDate dateOfBirth, String email, String firstName, String lastName, int phoneNumber, int plans,
+    public AccountInformationModel(int accountNumber, String addressLine1, String addressLine2, String city,
+            LocalDate dateOfBirth, String email, String firstName, String lastName, int phoneNumber,
             String state, int zip) {
         super();
         this.accountNumber = accountNumber;
@@ -54,10 +52,15 @@ public class AccountInformation {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
-        this.plans = plans;
         this.state = state;
         this.zip = zip;
     }
+    
+//    public AccountInformationModel(int accountNumber, String addressLine1, String addressLine2, String city,
+//            LocalDate dateOfBirth, String email, String firstName, String lastName, int phoneNumber, int plans,
+//            String state, int zip, Set<PlansModel> plans ) {
+//    	
+//    }
 
     public int getAccountNumber() {
         return accountNumber;
@@ -131,14 +134,6 @@ public class AccountInformation {
         this.phoneNumber = phoneNumber;
     }
 
-    public int getPlans() {
-        return plans;
-    }
-
-    public void setPlans(int plans) {
-        this.plans = plans;
-    }
-
     public String getState() {
         return state;
     }
@@ -160,7 +155,7 @@ public class AccountInformation {
 		return "AccountInformation [accountNumber=" + accountNumber + ", addressLine1=" + addressLine1
 				+ ", addressLine2=" + addressLine2 + ", city=" + city + ", dateOfBirth=" + dateOfBirth + ", email="
 				+ email + ", firstName=" + firstName + ", lastName=" + lastName + ", phoneNumber=" + phoneNumber
-				+ ", plans=" + plans + ", state=" + state + ", zip=" + zip + "]";
+				+ ", state=" + state + ", zip=" + zip + "]";
 	}
 
     

@@ -1,26 +1,27 @@
-package com.example.lucilor.beans;
+package com.example.lucilor.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.util.Set;
 
-@Entity
-@Table
-public class Device {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int phoneNumber;
-	@Column
-    private String phoneModel;
-	@Column
-    private String phoneNickname;
+import com.example.lucilor.beans.Device;
+import com.example.lucilor.beans.Devices;
 
-    public Device() {}
+public class DeviceModel {
 
-    public Device(int phoneNumber, String phoneModel, String phoneNickname) {
+	private int phoneNumber;
+	private String phoneModel;
+	private String phoneNickname;
+
+    public DeviceModel() {
+    	super();
+    }
+
+    public DeviceModel(Device device) {
+    	this.phoneNumber = device.getPhoneNumber();
+    	this.phoneModel = device.getPhoneModel();
+    	this.phoneNickname = device.getPhoneNickname();
+    }
+    
+    public DeviceModel(int phoneNumber, String phoneModel, String phoneNickname) {
         super();
         this.phoneNumber = phoneNumber;
         this.phoneModel = phoneModel;
@@ -57,5 +58,5 @@ public class Device {
 				+ "]";
 	}
 
+	
 }
-

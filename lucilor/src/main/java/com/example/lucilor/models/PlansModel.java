@@ -1,39 +1,37 @@
-package com.example.lucilor.beans;
+package com.example.lucilor.models;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
+import com.example.lucilor.beans.Plans;
 
-@Entity
-@Table
-public class Plans {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class PlansModel {
+
 	private int planNumber;
-	@Column
-    private int cloudStorage;
-	@Column
-    private String description;
-	@Column
-    private int devices;
-    @Column
+	private int cloudStorage;
+	private String description;
+	private int devices;
     private int mobileHotspotData;
-    @Column
     private int networkAccess;
-    @Column
     private double planCost;
-    @Column
     private String planName;
     
 
-    public Plans() {
+    public PlansModel() {
+    	super();
+    }
+    
+    public PlansModel(Plans plans) {
+    	this.planNumber = plans.getPlanNumber();
+    	this.cloudStorage = plans.getCloudStorage();
+    	this.description = plans.getDescription();
+    	this.devices = plans.getDevices();
+    	this.mobileHotspotData = plans.getMobileHotspotData();
+    	this.networkAccess = plans.getNetworkAccess();
+    	this.planCost = plans.getPlanCost();
+    	this.planName = plans.getPlanName();
     }
 
-    public Plans(int cloudStorage, String description, int devices, int mobileHotspotData, int networkAccess,
+    public PlansModel(int cloudStorage, String description, int devices, int mobileHotspotData, int networkAccess,
             double planCost, String planName, int planNumber) {
         super();
         this.cloudStorage = cloudStorage;
@@ -45,6 +43,19 @@ public class Plans {
         this.planName = planName;
         this.planNumber = planNumber;
     }
+    
+//    public PlansModel(int cloudStorage, String description, int devices, int mobileHotspotData, int networkAccess,
+//            double planCost, String planName, int planNumber, Set<>) {
+//        super();
+//        this.cloudStorage = cloudStorage;
+//        this.description = description;
+//        this.devices = devices;
+//        this.mobileHotspotData = mobileHotspotData;
+//        this.networkAccess = networkAccess;
+//        this.planCost = planCost;
+//        this.planName = planName;
+//        this.planNumber = planNumber;
+//    }
 
     public int getCloudStorage() {
         return cloudStorage;
@@ -118,5 +129,4 @@ public class Plans {
 	}
 
     
-
 }
