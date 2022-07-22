@@ -17,10 +17,9 @@ public class AccountInformationModel {
 	private String firstName;
 	private String lastName;
 	private int phoneNumber;
-	private int plans;
 	private String state;
 	private int zip;
-	//private Set<PlansModel> plans;
+	private Set<PlansModel> plans;
 
     public AccountInformationModel() {
     	super();
@@ -36,13 +35,12 @@ public class AccountInformationModel {
     	this.firstName = accountInfo.getFirstName();
     	this.lastName = accountInfo.getLastName();
     	this.phoneNumber = accountInfo.getPhoneNumber();
-    	this.plans = accountInfo.getPlans();
     	this.state = accountInfo.getState();
     	this.zip = accountInfo.getZip();
     }
 
     public AccountInformationModel(int accountNumber, String addressLine1, String addressLine2, String city,
-            LocalDate dateOfBirth, String email, String firstName, String lastName, int phoneNumber, int plans,
+            LocalDate dateOfBirth, String email, String firstName, String lastName, int phoneNumber,
             String state, int zip) {
         super();
         this.accountNumber = accountNumber;
@@ -54,7 +52,6 @@ public class AccountInformationModel {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
-        this.plans = plans;
         this.state = state;
         this.zip = zip;
     }
@@ -137,14 +134,6 @@ public class AccountInformationModel {
         this.phoneNumber = phoneNumber;
     }
 
-    public int getPlans() {
-        return plans;
-    }
-
-    public void setPlans(int plans) {
-        this.plans = plans;
-    }
-
     public String getState() {
         return state;
     }
@@ -166,7 +155,7 @@ public class AccountInformationModel {
 		return "AccountInformation [accountNumber=" + accountNumber + ", addressLine1=" + addressLine1
 				+ ", addressLine2=" + addressLine2 + ", city=" + city + ", dateOfBirth=" + dateOfBirth + ", email="
 				+ email + ", firstName=" + firstName + ", lastName=" + lastName + ", phoneNumber=" + phoneNumber
-				+ ", plans=" + plans + ", state=" + state + ", zip=" + zip + "]";
+				+ ", state=" + state + ", zip=" + zip + "]";
 	}
 
     
