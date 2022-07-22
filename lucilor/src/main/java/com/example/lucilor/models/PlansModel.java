@@ -9,7 +9,6 @@ public class PlansModel {
 	private int planNumber;
 	private int cloudStorage;
 	private String description;
-	private int devices;
     private int mobileHotspotData;
     private int networkAccess;
     private double planCost;
@@ -24,38 +23,23 @@ public class PlansModel {
     	this.planNumber = plans.getPlanNumber();
     	this.cloudStorage = plans.getCloudStorage();
     	this.description = plans.getDescription();
-    	this.devices = plans.getDevices();
     	this.mobileHotspotData = plans.getMobileHotspotData();
     	this.networkAccess = plans.getNetworkAccess();
     	this.planCost = plans.getPlanCost();
     	this.planName = plans.getPlanName();
     }
 
-    public PlansModel(int cloudStorage, String description, int devices, int mobileHotspotData, int networkAccess,
+    public PlansModel(int cloudStorage, String description, int mobileHotspotData, int networkAccess,
             double planCost, String planName, int planNumber) {
         super();
         this.cloudStorage = cloudStorage;
         this.description = description;
-        this.devices = devices;
         this.mobileHotspotData = mobileHotspotData;
         this.networkAccess = networkAccess;
         this.planCost = planCost;
         this.planName = planName;
         this.planNumber = planNumber;
     }
-    
-//    public PlansModel(int cloudStorage, String description, int devices, int mobileHotspotData, int networkAccess,
-//            double planCost, String planName, int planNumber, Set<>) {
-//        super();
-//        this.cloudStorage = cloudStorage;
-//        this.description = description;
-//        this.devices = devices;
-//        this.mobileHotspotData = mobileHotspotData;
-//        this.networkAccess = networkAccess;
-//        this.planCost = planCost;
-//        this.planName = planName;
-//        this.planNumber = planNumber;
-//    }
 
     public int getCloudStorage() {
         return cloudStorage;
@@ -71,14 +55,6 @@ public class PlansModel {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public int getDevices() {
-        return devices;
-    }
-
-    public void setDevices(int devices) {
-        this.devices = devices;
     }
 
     public int getMobileHotspotData() {
@@ -124,7 +100,7 @@ public class PlansModel {
 	@Override
 	public String toString() {
 		return "Plans [planNumber=" + planNumber + ", cloudStorage=" + cloudStorage + ", description=" + description
-				+ ", devices=" + devices + ", mobileHotspotData=" + mobileHotspotData + ", networkAccess="
+				+ ", mobileHotspotData=" + mobileHotspotData + ", networkAccess="
 				+ networkAccess + ", planCost=" + planCost + ", planName=" + planName + "]";
 	}
 

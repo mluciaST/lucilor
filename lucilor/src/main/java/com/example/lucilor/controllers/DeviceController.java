@@ -14,6 +14,7 @@ import com.example.lucilor.services.DeviceService;
 
 @RestController
 @RequestMapping("/device/v1")
+@CrossOrigin("http://localhost:3306")
 public class DeviceController {
 	
 	@Autowired

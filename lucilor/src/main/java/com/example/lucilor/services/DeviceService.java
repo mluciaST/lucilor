@@ -10,11 +10,12 @@ import com.example.lucilor.data.DeviceRepository;
 
 @Service
 public class DeviceService {
-
+    
+    
     @Autowired
     private DeviceRepository repository;
 
-    public List<Device> getDinos() {
+    public List<Device> getDevices() {
 		return repo.findAll();
 	}
 

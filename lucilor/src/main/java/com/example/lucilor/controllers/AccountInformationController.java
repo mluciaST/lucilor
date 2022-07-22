@@ -14,6 +14,7 @@ import com.example.lucilor.services.AccountInformationService;
 
 @RestController
 @RequestMapping("/accountinfo/v1")
+@CrossOrigin("http://localhost:3306")
 public class AccountInformationController {
 	@Autowired
 	AccountInformationService accountInfoService;

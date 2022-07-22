@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/plans/v1")
+@CrossOrigin("http://localhost:3306")
 public class PlansController {
 
 	@Autowired

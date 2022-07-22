@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import com.example.lucilor.models.DeviceModel;
 
 @Entity
 @Table
@@ -26,6 +27,13 @@ public class Device {
         this.phoneModel = phoneModel;
         this.phoneNickname = phoneNickname;
     } 
+
+    public DeviceModel(DeviceModel device) {
+        this.plansNumber = device.getPlansNumber();
+    	this.phoneNumber = device.getPhoneNumber();
+    	this.phoneModel = device.getPhoneModel();
+    	this.phoneNickname = device.getPhoneNickname();
+    }
 
     public int getPhoneNumber() {
         return phoneNumber;

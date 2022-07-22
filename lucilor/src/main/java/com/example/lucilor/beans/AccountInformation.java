@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import com.example.lucilor.models.AccountInformationModel;
 
 @Entity
 @Table
@@ -57,6 +58,20 @@ public class AccountInformation {
         this.plans = plans;
         this.state = state;
         this.zip = zip;
+    }
+
+    public AccountInformationModel(AccountInformationModel accountInfo) {
+    	this.accountNumber = accountInfo.getAccountNumber();
+    	this.addressLine1 = accountInfo.getAddressLine1();
+    	this.addressLine2 = accountInfo.getAddressLine2();
+    	this.city = accountInfo.getCity();
+    	this.dateOfBirth = accountInfo.getDateOfBirth();
+    	this.email = accountInfo.getEmail();
+    	this.firstName = accountInfo.getFirstName();
+    	this.lastName = accountInfo.getLastName();
+    	this.phoneNumber = accountInfo.getPhoneNumber();
+    	this.state = accountInfo.getState();
+    	this.zip = accountInfo.getZip();
     }
 
     public int getAccountNumber() {

@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+import com.example.lucilor.models.PlansModel;
 
 @Entity
 @Table
@@ -44,6 +44,16 @@ public class Plans {
         this.planCost = planCost;
         this.planName = planName;
         this.planNumber = planNumber;
+    }
+
+    public PlansModel(PlansModel plans) {
+    	this.planNumber = plans.getPlanNumber();
+    	this.cloudStorage = plans.getCloudStorage();
+    	this.description = plans.getDescription();
+    	this.mobileHotspotData = plans.getMobileHotspotData();
+    	this.networkAccess = plans.getNetworkAccess();
+    	this.planCost = plans.getPlanCost();
+    	this.planName = plans.getPlanName();
     }
 
     public int getCloudStorage() {

@@ -19,7 +19,6 @@ public class AccountInformationModel {
 	private int phoneNumber;
 	private String state;
 	private int zip;
-	private Set<PlansModel> plans;
 
     public AccountInformationModel() {
     	super();
@@ -55,12 +54,6 @@ public class AccountInformationModel {
         this.state = state;
         this.zip = zip;
     }
-    
-//    public AccountInformationModel(int accountNumber, String addressLine1, String addressLine2, String city,
-//            LocalDate dateOfBirth, String email, String firstName, String lastName, int phoneNumber, int plans,
-//            String state, int zip, Set<PlansModel> plans ) {
-//    	
-//    }
 
     public int getAccountNumber() {
         return accountNumber;

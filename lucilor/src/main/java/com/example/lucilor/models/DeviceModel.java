@@ -6,7 +6,7 @@ import com.example.lucilor.beans.Device;
 import com.example.lucilor.beans.Devices;
 
 public class DeviceModel {
-
+    private int plansNumber; // placeholder for the id
 	private int phoneNumber;
 	private String phoneModel;
 	private String phoneNickname;
@@ -16,17 +16,28 @@ public class DeviceModel {
     }
 
     public DeviceModel(Device device) {
+        this.plansNumber = device.getPlansNumber();
     	this.phoneNumber = device.getPhoneNumber();
     	this.phoneModel = device.getPhoneModel();
     	this.phoneNickname = device.getPhoneNickname();
+        
     }
     
-    public DeviceModel(int phoneNumber, String phoneModel, String phoneNickname) {
+    public DeviceModel(int plansNumber, int phoneNumber, String phoneModel, String phoneNickname) {
         super();
+        this.plansNumber = plansNumber;
         this.phoneNumber = phoneNumber;
         this.phoneModel = phoneModel;
         this.phoneNickname = phoneNickname;
     } 
+
+    public int getPlansNumber() {
+        return plansNumber;
+    }
+
+    public void setPlansNumber(int plansNumber) {
+        this.plansNumber = plansNumber;
+    }
 
     public int getPhoneNumber() {
         return phoneNumber;
@@ -54,7 +65,7 @@ public class DeviceModel {
 
 	@Override
 	public String toString() {
-		return "Device [phoneNumber=" + phoneNumber + ", phoneModel=" + phoneModel + ", phoneNickname=" + phoneNickname
+		return "Device [plansNumber="+ plansNumber +", phoneNumber=" + phoneNumber + ", phoneModel=" + phoneModel + ", phoneNickname=" + phoneNickname
 				+ "]";
 	}
 
