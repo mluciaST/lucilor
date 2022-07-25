@@ -4,13 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.example.lucilor.beans.AccountInformation;
 import com.example.lucilor.data.AccountInformationRepository;
+import com.example.lucilor.models.AccountInformationModel;
 
 @Service
-public class AccountInformationService {
+public class AccountInformationService{
     @Autowired
 	AccountInformationRepository repo;
 	
@@ -18,7 +17,7 @@ public class AccountInformationService {
 		return repo.findAll();
 	}
 
-	public AccountInformation save(AccountInformation dino){
+	public AccountInformation save(AccountInformation account){
 		return repo.save(account);
 	}
 
@@ -28,5 +27,9 @@ public class AccountInformationService {
 
     public List<AccountInformation> findByEmailSimilar(String email){
         return repo.findByEmailSimilar(email);
+    }
+
+    public List<AccountInformationModel> findAll() {
+        return null;
     }
 }
