@@ -11,5 +11,4 @@ export class PhonePlanComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

@@ -1,9 +1,6 @@
 package com.example.lucilor.models;
 
-import java.util.Set;
-
 import com.example.lucilor.beans.Device;
-import com.example.lucilor.beans.Devices;
 
 public class DeviceModel {
     private int plansNumber; // placeholder for the id

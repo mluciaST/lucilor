@@ -1,7 +1,5 @@
 package com.example.lucilor.beans;
 
-import java.time.LocalDate;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +11,8 @@ import com.example.lucilor.models.AccountPlansModel;
 @Entity
 @Table
 public class AccountPlans {
+    @Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private int plansNumber;
 	@Column
@@ -24,18 +24,18 @@ public class AccountPlans {
     
     public AccountPlans(int planNumber, int accountNumber) {
         super();
-        this.planNumber = planNumber;
+        this.plansNumber = planNumber;
         this.accountNumber = accountNumber;
     }
 
-    public AccountPlansModel(AccountPlansModel accountPlans) {
-        this.planNumber = accountPlans.getPlanNumber();
+    public AccountPlans(AccountPlansModel accountPlans) {
+        this.plansNumber = accountPlans.getPlanNumber();
         this.accountNumber = accountPlans.getAccountNumber();
     }       
 
-    public void setPlanNumber(int planNumber){this.planNumber = planNumber;}
+    public void setPlanNumber(int planNumber){this.plansNumber = planNumber;}
     public void setAccountNumber(int accountNumber){ this.accountNumber = accountNumber;}
 
-    public int getPlanNumber(){return planNumber;}
+    public int getPlanNumber(){return plansNumber;}
     public int getAccountNumber(){return accountNumber;}
 }

@@ -7,23 +7,28 @@ import org.springframework.stereotype.Service;
 
 import com.example.lucilor.beans.Device;
 import com.example.lucilor.data.DeviceRepository;
+import com.example.lucilor.models.DeviceModel;
 
 @Service
 public class DeviceService {
     
     
     @Autowired
-    private DeviceRepository repository;
+    private DeviceRepository repo;
 
     public List<Device> getDevices() {
 		return repo.findAll();
 	}
 
-	public Device save(Device device){
+	public Device save(Device account){
 		return repo.save(account);
 	}
 
-    public List<Device> findByPhoneSimilar(Int phone){
+    public List<Device> findByPhoneSimilar(int phone){
         return repo.findByPhoneSimilar(phone);
+    }
+
+    public List<DeviceModel> findAll() {
+        return null;
     }
 }

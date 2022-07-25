@@ -1,7 +1,5 @@
 package com.example.lucilor.models;
 
-import javax.persistence.Column;
-
 import com.example.lucilor.beans.AccountPlans;
 
 public class AccountPlansModel {

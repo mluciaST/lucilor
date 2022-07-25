@@ -46,7 +46,7 @@ public class Plans {
         this.planNumber = planNumber;
     }
 
-    public PlansModel(PlansModel plans) {
+    public Plans(PlansModel plans) {
     	this.planNumber = plans.getPlanNumber();
     	this.cloudStorage = plans.getCloudStorage();
     	this.description = plans.getDescription();

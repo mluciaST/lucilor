@@ -1,9 +1,6 @@
 package com.example.lucilor.models;
 
 import java.time.LocalDate;
-import java.util.Set;
-
-import javax.persistence.Column;
 
 import com.example.lucilor.beans.AccountInformation;
 

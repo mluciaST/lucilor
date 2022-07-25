@@ -24,7 +24,7 @@ export interface UserInfo {
 })
 export class GoogleApiService {
   userProfileSubject = new Subject<UserInfo>()
-  
+
   constructor(private readonly oAuthService: OAuthService) {
     oAuthService.configure(oAuthConfig)
     oAuthService.logoutUrl = "https://www.google.com/accounts/Logout"

@@ -18,21 +18,34 @@ public class Device {
     private String phoneModel;
 	@Column
     private String phoneNickname;
+    @Column
+    private int plansNumber;
+
+    
 
     public Device() {}
 
-    public Device(int phoneNumber, String phoneModel, String phoneNickname) {
+    public Device(int plansNumber, int phoneNumber, String phoneModel, String phoneNickname) {
         super();
+        this.plansNumber = plansNumber;
         this.phoneNumber = phoneNumber;
         this.phoneModel = phoneModel;
         this.phoneNickname = phoneNickname;
     } 
 
-    public DeviceModel(DeviceModel device) {
+    public Device(DeviceModel device) {
         this.plansNumber = device.getPlansNumber();
     	this.phoneNumber = device.getPhoneNumber();
     	this.phoneModel = device.getPhoneModel();
     	this.phoneNickname = device.getPhoneNickname();
+    }
+
+    public int getPlansNumber() {
+        return plansNumber;
+    }
+
+    public void setPlansNumber(int plansNumber) {
+        this.plansNumber = plansNumber;
     }
 
     public int getPhoneNumber() {

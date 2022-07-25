@@ -5,11 +5,16 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.jboss.logging.Logger;
 
 import com.example.lucilor.beans.Device;
+import com.example.lucilor.models.DeviceModel;
 import com.example.lucilor.services.DeviceService;
 
 @RestController
@@ -25,13 +30,13 @@ public class DeviceController {
 	@GetMapping
 	public ResponseEntity<List<DeviceModel>>findAll(){
 		List<DeviceModel> models = deviceService.findAll();
-		logger.debug(`Retrieved Models ${models}`);
+		logger.debug("Retrieved Models: " + models );
 
 		return new ResponseEntity<List<DeviceModel>>(models, HttpStatus.OK);
 	}
 
 	@PostMapping
-	public ResponseEntity<Device> save(@ResponseBody Device device){
+	public ResponseEntity<Device> save(@RequestBody Device device){
 		return new ResponseEntity<Device>(deviceService.save(device), HttpStatus.CREATED);
 	}
 

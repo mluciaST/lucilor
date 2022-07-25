@@ -60,7 +60,7 @@ public class AccountInformation {
         this.zip = zip;
     }
 
-    public AccountInformationModel(AccountInformationModel accountInfo) {
+    public AccountInformation(AccountInformationModel accountInfo) {
     	this.accountNumber = accountInfo.getAccountNumber();
     	this.addressLine1 = accountInfo.getAddressLine1();
     	this.addressLine2 = accountInfo.getAddressLine2();
