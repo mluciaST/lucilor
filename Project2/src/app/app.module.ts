@@ -5,21 +5,19 @@ import { OAuthModule } from 'angular-oauth2-oidc';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PhonePlanComponent } from './phone-plan/phone-plan.component';
-import { PhonePlansComponent } from './phone-plans/phone-plans.component';
-import { AccountSettingsComponent } from './account-settings/account-settings.component';
-import { BillsComponent } from './bills/bills.component';
-import { AccountsComponent } from './accounts/accounts.component';
-import { FooterComponent } from './footer/footer.component';
-import { DevicesComponent } from './devices/devices.component';
-import { HomeComponent } from './home/home.component';
-import { AccountContentComponent } from './account-content/account-content.component';
-import { AccountSettingsFormComponent } from './account-settings-form/account-settings-form.component';
+import { PhonePlansComponent } from './components/phone-plans/phone-plans.component';
+import { AccountSettingsComponent } from './components/account-settings/account-settings.component';
+import { BillsComponent } from './components/bills/bills.component';
+import { AccountsComponent } from './components/accounts/accounts.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { DevicesComponent } from './components/devices/devices.component';
+import { HomeComponent } from './components/home/home.component';
+import { AccountContentComponent } from './components/account-content/account-content.component';
+import { AccountSettingsFormComponent } from './components/account-settings-form/account-settings-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PhonePlanComponent,
     PhonePlansComponent,
     AccountSettingsComponent,
     BillsComponent,
@@ -28,7 +26,7 @@ import { AccountSettingsFormComponent } from './account-settings-form/account-se
     DevicesComponent,
     HomeComponent,
     AccountContentComponent,
-    AccountSettingsFormComponent 
+    AccountSettingsFormComponent
   ],
   imports: [
     BrowserModule,
