@@ -9,24 +9,33 @@ import com.example.lucilor.data.AccountInformationRepository;
 import com.example.lucilor.models.AccountInformationModel;
 
 @Service
-public class AccountInformationService{
+public class AccountInformationService {
     @Autowired
-	AccountInformationRepository repo;
-	
-	public List<AccountInformation> getDinos() {
-		return repo.findAll();
-	}
+    private AccountInformationRepository repo;
 
-	public AccountInformation save(AccountInformation account){
-		return repo.save(account);
-	}
-
-    public List<AccountInformation> findByNameSimilar(String name){
-        return repo.findByNameSimilar(name);
+    // VIEW account info
+    public List<AccountInformation> getAccountInfo() {
+        return repo.findAll();
     }
 
-    public List<AccountInformation> findByEmailSimilar(String email){
-        return repo.findByEmailSimilar(email);
+    // ADD account
+    public AccountInformation save(AccountInformation account) {
+        return repo.save(account);
+    }
+
+    // GET account info by email
+    public List<AccountInformation> findByEmailSimilar(String email) {
+        return repo.findByEmailLike(email);
+    }
+
+    // UPDATE account
+    public void updateAccount(String email, AccountInformation account) {
+        repo.save(account);
+    }
+
+    // DELETE account
+    public void deleteAccount(int id) {
+        repo.deleteById(id);
     }
 
     public List<AccountInformationModel> findAll() {
