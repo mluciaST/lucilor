@@ -5,10 +5,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./phone-plans.component.css']
 })
 export class PhonePlansComponent implements OnInit {
+  hideMyPlans = true;
+  hideIndividualPlans = true;
+  hideCouplesPlans = true;
+  hideFamilyPlans = true;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  toggleMyPlans(){
+    this.hideMyPlans = false;
+    this.hideIndividualPlans = true;
+    this.hideCouplesPlans = true;
+    this.hideFamilyPlans = true;
+  }
+  toggleIndividualPlans(){
+    this.hideMyPlans = true;
+    this.hideIndividualPlans = false;
+    this.hideCouplesPlans = true;
+    this.hideFamilyPlans = true;
+  }
+  toggleCouplesPlans(){
+    this.hideMyPlans = true;
+    this.hideIndividualPlans = true;
+    this.hideCouplesPlans = false;
+    this.hideFamilyPlans = true;
+  }
+  toggleFamilyPlans(){
+    this.hideMyPlans = true;
+    this.hideIndividualPlans = true;
+    this.hideCouplesPlans = true;
+    this.hideFamilyPlans = false;
   }
 
 }

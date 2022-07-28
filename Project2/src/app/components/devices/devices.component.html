@@ -4,56 +4,7 @@
          <!--View Devices-->
          <!--Use *ngFor to generate the table-->
         <div class="col-6">
-            <h3>Current Devices</h3>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                      <th scope="col">Plan Number</th>
-                      <th scope="col">Phone Number</th>
-                      <th scope="col">Nickname</th>
-                      <th scope="col">Phone Model</th>
-                      <th scope="col"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                      <!-- Consider using table depemdency?-->
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>000-000-0000</td>
-                        <td>Taylor's Phone</td>
-                        <td>Samsung GX</td>
-                        <td><button class="btn btn-primary Button" type="button">Edit</button><button class="btn btn-primary Button" type="button">Delete</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>000-000-0000</td>
-                        <td>Taylor's Phone</td>
-                        <td>Samsung GX</td>
-                        <td><button class="btn btn-primary Button" type="button">Edit</button><button class="btn btn-primary Button" type="button">Delete</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>000-000-0000</td>
-                        <td>Taylor's Phone</td>
-                        <td>Samsung GX</td>
-                        <td><button class="btn btn-primary Button" type="button">Edit</button><button class="btn btn-primary Button" type="button">Delete</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>000-000-0000</td>
-                        <td>Taylor's Phone</td>
-                        <td>Samsung GX</td>
-                        <td><button class="btn btn-primary Button" type="button">Edit</button><button class="btn btn-primary Button" type="button">Delete</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>000-000-0000</td>
-                        <td>Taylor's Phone</td>
-                        <td>Samsung GX</td>
-                        <td><button class="btn btn-primary Button" type="button">Edit</button><button class="btn btn-primary Button" type="button">Delete</button></td>
-                    </tr>
-                  </tbody>
-            </table>
+            <app-device-table></app-device-table>
         </div>
 
         <!--Devices Form-->
@@ -90,7 +41,7 @@
                     <div class="col-2">
                         <input class="Button2" type="submit" value="Add Device"/>
                     </div>
-                    
+
                 </div>
             </form>
         </div>

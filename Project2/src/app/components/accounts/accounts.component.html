@@ -1,17 +1,20 @@
 <h1>My Account</h1>
 <div class="Container row">
-    <div class="col-4">
-        <ul class="Button-List">
-            <li><button class="Button">My Plans</button></li>
-            <br/>
-            <li><button class="Button">My Devices</button></li>
-            <br/>
-            <li><button class="Button">My Bills</button></li>
-            <br/>
-            <li><button class="Button">Account Settings</button></li>
-        </ul>
-    </div>
-    <div class="col-8">
-        <app-account-content></app-account-content>
-    </div>
+  <div class="col-4">
+      <ul class="Button-List">
+          <li><app-button btnClass="btn btn-primary Button Button1" text="My Plans" (btnClick)="toggleMyPlans()"></app-button></li>
+          <br/>
+          <li><app-button btnClass="btn btn-primary Button Button1" text="My Devices" (btnClick)="toggleDevices()"></app-button></li>
+          <br/>
+          <li><app-button btnClass="btn btn-primary Button Button1" text="My Bills" (btnClick)="toggleBills()"></app-button></li>
+          <br/>
+          <li><app-button btnClass="btn btn-primary Button Button1" text="Account Settings" (btnClick)="toggleAccountSettings()"></app-button></li>
+      </ul>
+  </div>
+  <div class="col-8">
+      <div [hidden] = "hideMyPlans"><app-my-plans></app-my-plans></div>
+      <div [hidden] = "hideDevices"><app-device-table></app-device-table></div>
+      <div [hidden] = "hideBills"><app-bills></app-bills></div>
+      <div [hidden] = "hideAccountSettings"><app-account-settings></app-account-settings></div>
+  </div>
 </div>

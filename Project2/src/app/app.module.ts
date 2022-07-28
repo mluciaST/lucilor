@@ -12,8 +12,15 @@ import { AccountsComponent } from './components/accounts/accounts.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DevicesComponent } from './components/devices/devices.component';
 import { HomeComponent } from './components/home/home.component';
-import { AccountContentComponent } from './components/account-content/account-content.component';
 import { AccountSettingsFormComponent } from './components/account-settings-form/account-settings-form.component';
+import { MyPlansComponent } from './components/my-plans/my-plans.component';
+import { IndividualPlansComponent } from './components/individual-plans/individual-plans.component';
+import { CouplesPlansComponent } from './components/couples-plans/couples-plans.component';
+import { FamilyPlansComponent } from './components/family-plans/family-plans.component';
+import { ButtonComponent } from './components/button/button.component';
+import { DeviceTableComponent } from './components/device-table/device-table.component';
+import { DecimalPipe } from '@angular/common';
+import { AccountInfoComponent } from './components/account-info/account-info.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +32,14 @@ import { AccountSettingsFormComponent } from './components/account-settings-form
     FooterComponent,
     DevicesComponent,
     HomeComponent,
-    AccountContentComponent,
-    AccountSettingsFormComponent
+    AccountSettingsFormComponent,
+    MyPlansComponent,
+    IndividualPlansComponent,
+    CouplesPlansComponent,
+    FamilyPlansComponent,
+    ButtonComponent,
+    DeviceTableComponent,
+    AccountInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +47,7 @@ import { AccountSettingsFormComponent } from './components/account-settings-form
     HttpClientModule,
     OAuthModule.forRoot()
   ],
-  providers: [],
+  providers: [DecimalPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
