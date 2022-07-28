@@ -1,0 +1,22 @@
+<h3>Current Devices</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+          <th [hidden]="hidePlanNumber" scope="col">Plan Number</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Nickname</th>
+          <th scope="col">Phone Model</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let device of devices">
+        <tr>
+          <td [hidden]="hidePlanNumber">{{device.planNumber}}</td>
+          <td>{{device.phoneNumber}}</td>
+          <td>{{device.phoneNickname}}</td>
+          <td>{{device.phoneModel}}</td>
+          <td><app-button btnClass="btn btn-primary Button Button2" text="Edit" (btnClick)="editDevice()">
+          </app-button><app-button btnClass="btn btn-primary Button Button2" text="Delete" (btnClick)="deleteDevice()"></app-button></td>
+        </tr>
+      </tbody>
+</table>

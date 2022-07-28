@@ -1,0 +1,20 @@
+<h1>Phone Plans</h1>
+<div class="Container row">
+    <div class="col-4">
+        <ul class="Button-List">
+            <li><app-button btnClass="btn btn-primary Button Button1" text="My Plans" (btnClick)="toggleMyPlans()"></app-button></li>
+            <br/>
+            <li><app-button btnClass="btn btn-primary Button Button1" text="Individual Plans" (btnClick)="toggleIndividualPlans()"></app-button></li>
+            <br/>
+            <li><app-button btnClass="btn btn-primary Button Button1" text="Couples Plans" (btnClick)="toggleCouplesPlans()"></app-button></li>
+            <br/>
+            <li><app-button btnClass="btn btn-primary Button Button1" text="Family Plans" (btnClick)="toggleFamilyPlans()"></app-button></li>
+        </ul>
+    </div>
+    <div class="col-8">
+        <div [hidden] = "hideMyPlans"><app-my-plans></app-my-plans></div>
+        <div [hidden] = "hideIndividualPlans"><app-individual-plans></app-individual-plans></div>
+        <div [hidden] = "hideCouplesPlans"><app-couples-plans></app-couples-plans></div>
+        <div [hidden] = "hideFamilyPlans"><app-family-plans></app-family-plans></div>
+    </div>
+</div>

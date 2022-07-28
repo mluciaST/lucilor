@@ -1,0 +1,46 @@
+<h2>Account Settings</h2>
+<div class="row" *ngFor="let accountInfo of accounts">
+    <div class="col-6">
+        <div class="row">
+            <div class="col-4"><h6>Account Name:</h6></div>
+            <div class="col-6"><p>{{accountInfo.firstName}} {{accountInfo.lastName}}</p></div>
+        </div>
+
+        <div class="row">
+            <div class="col-4"><h6>Account Email:</h6></div>
+            <div class="col-6"><p>{{accountInfo.email}}</p></div>
+        </div>
+
+        <div class="row">
+            <div class="col-4"><h6>Phone Number:</h6></div>
+            <div class="col-6"><p>{{accountInfo.phoneNumber}}</p></div>
+        </div>
+    </div>
+    <div class="col-6">
+        <h3>Billing Address</h3>
+        <div class="row">
+            <div class="col-12">
+                <div><p>{{accountInfo.addressLine1}}</p></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+              <div><p>{{accountInfo.addressLine2}}</p></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+              <div class="col-4"><h6>City:</h6></div>
+              <div class="col-6"><p>{{accountInfo.city}}</p></div>
+            </div>
+            <div class="col-4">
+              <div class="col-4"><h6>Zipcode:</h6></div>
+              <div class="col-6"><p>{{accountInfo.zip}}</p></div>
+            </div>
+            <div class="col-4">
+              <div class="col-4"><h6>State</h6></div>
+              <div class="col-6"><p>{{accountInfo.state}}</p></div>
+            </div>
+        </div>
+    </div>
+</div>

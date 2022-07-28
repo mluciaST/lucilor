@@ -1,0 +1,6 @@
+<div [hidden] = "hideAccountInfo"><app-account-info></app-account-info></div>
+<div [hidden] = "hideAccountForm"><app-account-settings-form></app-account-settings-form></div>
+<div class="row">
+  <div class="col-6"><app-button btnClass="btn btn-primary Button Button1" text={{btnText}} (btnClick)="toggleForm()"></app-button></div>
+  <div class="col-6"><app-button btnClass="btn btn-primary Button Button1" text="Delete Account"></app-button></div>
+</div>
