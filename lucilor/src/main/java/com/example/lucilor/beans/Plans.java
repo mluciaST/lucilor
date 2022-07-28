@@ -13,13 +13,11 @@ import com.example.lucilor.models.PlansModel;
 public class Plans {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int planNumber;
+	private int plansNumber;
 	@Column
     private int cloudStorage;
 	@Column
     private String description;
-	@Column
-    private int devices;
     @Column
     private int mobileHotspotData;
     @Column
@@ -28,32 +26,37 @@ public class Plans {
     private double planCost;
     @Column
     private String planName;
-    
 
-    public Plans() {
-    }
+    public Plans() {}
 
-    public Plans(int cloudStorage, String description, int devices, int mobileHotspotData, int networkAccess,
-            double planCost, String planName, int planNumber) {
+    public Plans(int cloudStorage, String description, int mobileHotspotData, int networkAcces,
+            double plansCost, String plansName, int plansNumber) {
         super();
         this.cloudStorage = cloudStorage;
         this.description = description;
-        this.devices = devices;
         this.mobileHotspotData = mobileHotspotData;
-        this.networkAccess = networkAccess;
-        this.planCost = planCost;
-        this.planName = planName;
-        this.planNumber = planNumber;
+        this.networkAccess = networkAcces;
+        this.planCost = plansCost;
+        this.planName = plansName;
+        this.plansNumber = plansNumber;
     }
 
     public Plans(PlansModel plans) {
-    	this.planNumber = plans.getPlanNumber();
+    	this.plansNumber = plans.getPlansNumber();
     	this.cloudStorage = plans.getCloudStorage();
     	this.description = plans.getDescription();
     	this.mobileHotspotData = plans.getMobileHotspotData();
     	this.networkAccess = plans.getNetworkAccess();
     	this.planCost = plans.getPlanCost();
     	this.planName = plans.getPlanName();
+    }
+
+    public int getPlansNumber(){
+        return plansNumber;
+    }
+
+    public void setPlansNumber(int plansNumber) {
+        this.plansNumber = plansNumber;
     }
 
     public int getCloudStorage() {
@@ -72,14 +75,6 @@ public class Plans {
         this.description = description;
     }
 
-    public int getDevices() {
-        return devices;
-    }
-
-    public void setDevices(int devices) {
-        this.devices = devices;
-    }
-
     public int getMobileHotspotData() {
         return mobileHotspotData;
     }
@@ -88,12 +83,8 @@ public class Plans {
         this.mobileHotspotData = mobileHotspotData;
     }
 
-    public int getNetworkAccess() {
-        return networkAccess;
-    }
-
-    public void setNetworkAccess(int networkAccess) {
-        this.networkAccess = networkAccess;
+    public void setNetworkAcces(int networkAcces) {
+        this.networkAccess = networkAcces;
     }
 
     public double getPlanCost() {
@@ -112,20 +103,9 @@ public class Plans {
         this.planName = planName;
     }
 
-    public int getPlanNumber() {
-        return planNumber;
+    public int getNetworkAccess() {
+        return networkAccess;
     }
-
-    public void setPlanNumber(int planNumber) {
-        this.planNumber = planNumber;
-    }
-
-	@Override
-	public String toString() {
-		return "Plans [planNumber=" + planNumber + ", cloudStorage=" + cloudStorage + ", description=" + description
-				+ ", devices=" + devices + ", mobileHotspotData=" + mobileHotspotData + ", networkAccess="
-				+ networkAccess + ", planCost=" + planCost + ", planName=" + planName + "]";
-	}
 
     
 

@@ -1,7 +1,7 @@
 package com.example.lucilor.services;
 
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Optional;
 
 //import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,20 +19,15 @@ public class AccountPlansService {
 	private AccountPlansRepository repository;
 
 	public List<AccountPlansModel> findAll() {
-		return null;
-	}
+		List<AccountPlans> accountPlans = repository.findAll();
+		List<AccountPlansModel> models = new LinkedList<>();
 
-	public AccountPlansModel findById(int id) {
-		AccountPlansModel accountPlans;
-		Optional<AccountPlans> temp = repository.findById(id);
-
-		if (temp.isPresent()) {
-			accountPlans = new AccountPlansModel(temp.get());
-		} else {
-			accountPlans = new AccountPlansModel();
+		for (AccountPlans accountPlan : accountPlans){
+			AccountPlansModel temp = new AccountPlansModel(accountPlan);
+			models.add(temp);
 		}
 
-		return accountPlans;
+		return models;
 	}
 
 	// DELETE account plan
@@ -41,6 +36,6 @@ public class AccountPlansService {
 	}
 
 	public AccountPlans save(AccountPlans accountPlans) {
-		return null;
+		return repository.save(accountPlans);
 	}
 }

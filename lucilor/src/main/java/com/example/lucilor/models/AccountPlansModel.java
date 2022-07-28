@@ -6,7 +6,7 @@ public class AccountPlansModel {
 
     private int plansNumber;
     private int accountNumber;
-    private int phoneNumber;
+    private String phoneNumber;
 
     public AccountPlansModel(AccountPlans accountPlans) {
         this.plansNumber = accountPlans.getPlansNumber();
@@ -19,22 +19,10 @@ public class AccountPlansModel {
         super();
     }
 
-    public AccountPlansModel(int plansNumber, int accountNumber, int phoneNumber) {
+    public AccountPlansModel(int plansNumber, int accountNumber, String phoneNumber) {
         super();
         this.plansNumber = plansNumber;
         this.accountNumber = accountNumber;
-        this.phoneNumber = phoneNumber;
-    }
-
-    public void setPlansNumber(int plansNumber) {
-        this.plansNumber = plansNumber;
-    }
-
-    public void setAccountNumber(int accountNumber) {
-        this.accountNumber = accountNumber;
-    }
-
-    public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -42,11 +30,25 @@ public class AccountPlansModel {
         return plansNumber;
     }
 
+    public void setPlansNumber(int plansNumber) {
+        this.plansNumber = plansNumber;
+    }
+
     public int getAccountNumber() {
         return accountNumber;
     }
 
-    public int getPhoneNumber() {
+    public void setAccountNumber(int accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public String getPhoneNumber() {
         return phoneNumber;
     }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    
 }

@@ -14,10 +14,4 @@ import com.example.lucilor.beans.AccountInformation;
 public interface AccountInformationRepository extends JpaRepository<AccountInformation, Integer> {
 
 	public List<AccountInformation> findByEmailLike(String email);
-
-	// @Query(value = "select * from accountInformation ai where ai.email like
-	// :email ", nativeQuery = true)
-	// public List<AccountInformation> findByEmailLike(@Param("email") String
-	// email);
-
 }

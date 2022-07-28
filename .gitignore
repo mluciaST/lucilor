@@ -1,3 +1,4 @@
 /.metadata/
-lucilor/src/main/resources/application.yml
-lucilor/src/main/resources/application.yml
+/lucilor/src/main/resources/application.yml
+/lucilor/src/main/resources/application.yml
+lucilor/pom.xml

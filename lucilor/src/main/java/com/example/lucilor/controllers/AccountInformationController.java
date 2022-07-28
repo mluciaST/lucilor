@@ -3,6 +3,7 @@ package com.example.lucilor.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Description;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -42,6 +43,7 @@ public class AccountInformationController {
 		return new ResponseEntity<AccountInformation>(accountInfoService.save(account), HttpStatus.CREATED);
 	}
 
+	@Description("Updates the account via email")
 	@PutMapping("/{email}")
 	public void updateAccount(@PathVariable String email, @RequestBody AccountInformation accountInformation) {
 		accountInfoService.updateAccount(email, accountInformation);

@@ -38,12 +38,6 @@ public class AccountPlansController {
 		return new ResponseEntity<List<AccountPlansModel>>(models, HttpStatus.OK);
 	}
 
-	// GET by id
-	@GetMapping("/{id}")
-	public ResponseEntity<AccountPlansModel> findById(@PathVariable int id) {
-		return new ResponseEntity<AccountPlansModel>(accountPlansService.findById(id), HttpStatus.OK);
-	}
-
 	// ADD
 	@PostMapping
 	public ResponseEntity<AccountPlans> save(@RequestBody AccountPlans accountPlans) {

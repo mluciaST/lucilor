@@ -1,6 +1,7 @@
 package com.example.lucilor.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,15 +17,20 @@ public class PlansService {
     private PlansRepository repo;
 
     // VIEW all plans
-    public List<Plans> getPlans() {
+    public List<Plans> findAll() {
         return repo.findAll();
     }
 
-    public Plans save(Plans plans) {
-        return repo.save(plans);
+    public PlansModel findById(int id){
+       PlansModel plans;
+       Optional<Plans> temp = repo.findById(id);
+       if (temp.isPresent()){
+            plans = new PlansModel(temp.get());
+       } else {
+            plans = new PlansModel();
+       }
+
+       return plans;
     }
 
-    public List<PlansModel> findAll() {
-        return null;
-    }
 }

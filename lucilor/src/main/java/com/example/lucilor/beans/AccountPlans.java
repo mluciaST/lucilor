@@ -12,52 +12,51 @@ import com.example.lucilor.models.AccountPlansModel;
 @Table
 public class AccountPlans {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    private int plansNumber;
+    private int accountPlansId;
     @Column
     private int accountNumber;
     @Column
-    private int phoneNumber;
+    private int plansNumber;
+    @Column
+    private String phoneNumber;
 
-    public AccountPlans() {
-        super();
-    }
-
-    public AccountPlans(int planNumber, int accountNumber, int phoneNumber) {
-        super();
-        this.plansNumber = planNumber;
-        this.accountNumber = accountNumber;
-        this.phoneNumber = phoneNumber;
-    }
-
-    public AccountPlans(AccountPlansModel accountPlans) {
-        this.plansNumber = accountPlans.getPlansNumber();
+    public AccountPlans(){}
+    public AccountPlans(AccountPlansModel accountPlans){
         this.accountNumber = accountPlans.getAccountNumber();
+        this.plansNumber = accountPlans.getPlansNumber();
         this.phoneNumber = accountPlans.getPhoneNumber();
     }
 
-    public void setPlansNumber(int planNumber) {
-        this.plansNumber = planNumber;
-    }
-
-    public void setAccountNumber(int accountNumber) {
+    public AccountPlans(int accountNumber, int plansNumber, String phoneNumber){
         this.accountNumber = accountNumber;
-    }
-
-    public void setPhoneNumber(int phoneNumber) {
+        this.plansNumber = plansNumber;
         this.phoneNumber = phoneNumber;
     }
-
-    public int getPlansNumber() {
-        return plansNumber;
-    }
-
     public int getAccountNumber() {
         return accountNumber;
     }
-
-    public int getPhoneNumber() {
+    public void setAccountNumber(int accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+    public int getPlansNumber() {
+        return plansNumber;
+    }
+    public void setPlansNumber(int plansNumber) {
+        this.plansNumber = plansNumber;
+    }
+    public String getPhoneNumber() {
         return phoneNumber;
     }
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+    public int getAccountPlansId() {
+        return accountPlansId;
+    }
+    public void setAccountPlansId(int accountPlansId) {
+        this.accountPlansId = accountPlansId;
+    }
+
 }

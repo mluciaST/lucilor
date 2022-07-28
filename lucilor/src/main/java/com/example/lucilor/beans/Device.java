@@ -21,8 +21,6 @@ public class Device {
     @Column
     private int plansNumber;
 
-    
-
     public Device() {}
 
     public Device(int plansNumber, int phoneNumber, String phoneModel, String phoneNickname) {

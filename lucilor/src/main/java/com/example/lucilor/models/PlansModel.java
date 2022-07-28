@@ -4,7 +4,7 @@ import com.example.lucilor.beans.Plans;
 
 public class PlansModel {
 
-	private int planNumber;
+	private int plansNumber;
 	private int cloudStorage;
 	private String description;
     private int mobileHotspotData;
@@ -18,7 +18,7 @@ public class PlansModel {
     }
     
     public PlansModel(Plans plans) {
-    	this.planNumber = plans.getPlanNumber();
+    	this.plansNumber = plans.getPlansNumber();
     	this.cloudStorage = plans.getCloudStorage();
     	this.description = plans.getDescription();
     	this.mobileHotspotData = plans.getMobileHotspotData();
@@ -28,7 +28,7 @@ public class PlansModel {
     }
 
     public PlansModel(int cloudStorage, String description, int mobileHotspotData, int networkAccess,
-            double planCost, String planName, int planNumber) {
+            double planCost, String planName, int plansNumber) {
         super();
         this.cloudStorage = cloudStorage;
         this.description = description;
@@ -36,7 +36,7 @@ public class PlansModel {
         this.networkAccess = networkAccess;
         this.planCost = planCost;
         this.planName = planName;
-        this.planNumber = planNumber;
+        this.plansNumber = plansNumber;
     }
 
     public int getCloudStorage() {
@@ -87,20 +87,18 @@ public class PlansModel {
         this.planName = planName;
     }
 
-    public int getPlanNumber() {
-        return planNumber;
+    public int getPlansNumber() {
+        return plansNumber;
     }
 
-    public void setPlanNumber(int planNumber) {
-        this.planNumber = planNumber;
+    public void setPlansNumber(int plansNumber) {
+        this.plansNumber = plansNumber;
     }
 
 	@Override
 	public String toString() {
-		return "Plans [planNumber=" + planNumber + ", cloudStorage=" + cloudStorage + ", description=" + description
+		return "Plans [plansNumber=" + plansNumber + ", cloudStorage=" + cloudStorage + ", description=" + description
 				+ ", mobileHotspotData=" + mobileHotspotData + ", networkAccess="
 				+ networkAccess + ", planCost=" + planCost + ", planName=" + planName + "]";
 	}
-
-    
 }
