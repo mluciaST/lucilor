@@ -5,38 +5,38 @@ import java.time.LocalDate;
 import com.example.lucilor.beans.AccountInformation;
 
 public class AccountInformationModel {
-	private int accountNumber;
-	private String addressLine1;
-	private String addressLine2;
-	private String city;
-	private LocalDate dateOfBirth;
-	private String email;
-	private String firstName;
-	private String lastName;
-	private int phoneNumber;
-	private String state;
-	private int zip;
+    private int accountNumber;
+    private String addressLine1;
+    private String addressLine2;
+    private String city;
+    private LocalDate dateOfBirth;
+    private String email;
+    private String firstName;
+    private String lastName;
+    private String phoneNumber;
+    private String state;
+    private int zip;
 
     public AccountInformationModel() {
-    	super();
+        super();
     }
-    
+
     public AccountInformationModel(AccountInformation accountInfo) {
-    	this.accountNumber = accountInfo.getAccountNumber();
-    	this.addressLine1 = accountInfo.getAddressLine1();
-    	this.addressLine2 = accountInfo.getAddressLine2();
-    	this.city = accountInfo.getCity();
-    	this.dateOfBirth = accountInfo.getDateOfBirth();
-    	this.email = accountInfo.getEmail();
-    	this.firstName = accountInfo.getFirstName();
-    	this.lastName = accountInfo.getLastName();
-    	this.phoneNumber = accountInfo.getPhoneNumber();
-    	this.state = accountInfo.getState();
-    	this.zip = accountInfo.getZip();
+        this.accountNumber = accountInfo.getAccountNumber();
+        this.addressLine1 = accountInfo.getAddressLine1();
+        this.addressLine2 = accountInfo.getAddressLine2();
+        this.city = accountInfo.getCity();
+        this.dateOfBirth = accountInfo.getDateOfBirth();
+        this.email = accountInfo.getEmail();
+        this.firstName = accountInfo.getFirstName();
+        this.lastName = accountInfo.getLastName();
+        this.phoneNumber = accountInfo.getPhoneNumber();
+        this.state = accountInfo.getState();
+        this.zip = accountInfo.getZip();
     }
 
     public AccountInformationModel(int accountNumber, String addressLine1, String addressLine2, String city,
-            LocalDate dateOfBirth, String email, String firstName, String lastName, int phoneNumber,
+            LocalDate dateOfBirth, String email, String firstName, String lastName, String phoneNumber,
             String state, int zip) {
         super();
         this.accountNumber = accountNumber;
@@ -116,11 +116,11 @@ public class AccountInformationModel {
         this.lastName = lastName;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -140,13 +140,12 @@ public class AccountInformationModel {
         this.zip = zip;
     }
 
-	@Override
-	public String toString() {
-		return "AccountInformation [accountNumber=" + accountNumber + ", addressLine1=" + addressLine1
-				+ ", addressLine2=" + addressLine2 + ", city=" + city + ", dateOfBirth=" + dateOfBirth + ", email="
-				+ email + ", firstName=" + firstName + ", lastName=" + lastName + ", phoneNumber=" + phoneNumber
-				+ ", state=" + state + ", zip=" + zip + "]";
-	}
+    @Override
+    public String toString() {
+        return "AccountInformation [accountNumber=" + accountNumber + ", addressLine1=" + addressLine1
+                + ", addressLine2=" + addressLine2 + ", city=" + city + ", dateOfBirth=" + dateOfBirth + ", email="
+                + email + ", firstName=" + firstName + ", lastName=" + lastName + ", phoneNumber=" + phoneNumber
+                + ", state=" + state + ", zip=" + zip + "]";
+    }
 
-    
 }

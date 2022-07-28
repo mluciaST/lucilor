@@ -11,12 +11,12 @@ import com.example.lucilor.models.PlansModel;
 @Entity
 @Table
 public class Plans {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int plansNumber;
-	@Column
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int plansNumber;
+    @Column
     private int cloudStorage;
-	@Column
+    @Column
     private String description;
     @Column
     private int mobileHotspotData;
@@ -27,7 +27,8 @@ public class Plans {
     @Column
     private String planName;
 
-    public Plans() {}
+    public Plans() {
+    }
 
     public Plans(int cloudStorage, String description, int mobileHotspotData, int networkAcces,
             double plansCost, String plansName, int plansNumber) {
@@ -42,16 +43,16 @@ public class Plans {
     }
 
     public Plans(PlansModel plans) {
-    	this.plansNumber = plans.getPlansNumber();
-    	this.cloudStorage = plans.getCloudStorage();
-    	this.description = plans.getDescription();
-    	this.mobileHotspotData = plans.getMobileHotspotData();
-    	this.networkAccess = plans.getNetworkAccess();
-    	this.planCost = plans.getPlanCost();
-    	this.planName = plans.getPlanName();
+        this.plansNumber = plans.getPlansNumber();
+        this.cloudStorage = plans.getCloudStorage();
+        this.description = plans.getDescription();
+        this.mobileHotspotData = plans.getMobileHotspotData();
+        this.networkAccess = plans.getNetworkAccess();
+        this.planCost = plans.getPlanCost();
+        this.planName = plans.getPlanName();
     }
 
-    public int getPlansNumber(){
+    public int getPlansNumber() {
         return plansNumber;
     }
 
@@ -107,6 +108,7 @@ public class Plans {
         return networkAccess;
     }
 
+}
+
     
 
-}
