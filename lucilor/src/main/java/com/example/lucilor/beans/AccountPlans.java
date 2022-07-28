@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import com.example.lucilor.models.AccountPlansModel;
 
 @Entity
-@Table
+@Table(name = "account_plans")
 public class AccountPlans {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,20 +19,16 @@ public class AccountPlans {
     private int accountNumber;
     @Column
     private int plansNumber;
-    @Column
-    private String phoneNumber;
 
     public AccountPlans(){}
     public AccountPlans(AccountPlansModel accountPlans){
         this.accountNumber = accountPlans.getAccountNumber();
         this.plansNumber = accountPlans.getPlansNumber();
-        this.phoneNumber = accountPlans.getPhoneNumber();
     }
 
-    public AccountPlans(int accountNumber, int plansNumber, String phoneNumber){
+    public AccountPlans(int accountNumber, int plansNumber){
         this.accountNumber = accountNumber;
         this.plansNumber = plansNumber;
-        this.phoneNumber = phoneNumber;
     }
     public int getAccountNumber() {
         return accountNumber;
@@ -46,12 +42,7 @@ public class AccountPlans {
     public void setPlansNumber(int plansNumber) {
         this.plansNumber = plansNumber;
     }
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
+
     public int getAccountPlansId() {
         return accountPlansId;
     }

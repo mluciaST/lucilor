@@ -25,7 +25,7 @@ public class AccountInformationService {
 
     // GET account info by email
     public List<AccountInformation> findByEmailSimilar(String email) {
-        return repo.findByEmailLike(email);
+        return repo.findByEmail(email);
     }
 
     // UPDATE account

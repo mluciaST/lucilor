@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import com.example.lucilor.models.AccountInformationModel;
 
 @Entity
-@Table
+@Table(name = "account_information")
 public class AccountInformation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,6 +38,10 @@ public class AccountInformation {
     private String state;
 	@Column
     private int zip;
+
+    //Foreign Keys
+    
+
 
     public AccountInformation() {
     }
