@@ -44,9 +44,9 @@ public class AccountInformationController {
 	}
 
 	@Description("Updates the account via email")
-	@PutMapping("/{email}")
-	public void updateAccount(@PathVariable String email, @RequestBody AccountInformation accountInformation) {
-		accountInfoService.updateAccount(email, accountInformation);
+	@PutMapping
+	public ResponseEntity<AccountInformation> updateAccount(@RequestBody AccountInformation accountInformation) {
+		return new ResponseEntity<AccountInformation>(accountInfoService.save(accountInformation), HttpStatus.CREATED);
 	}
 
 	@DeleteMapping("/{id}")

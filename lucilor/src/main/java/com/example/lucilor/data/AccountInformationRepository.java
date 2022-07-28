@@ -13,5 +13,5 @@ import com.example.lucilor.beans.AccountInformation;
 @Repository
 public interface AccountInformationRepository extends JpaRepository<AccountInformation, Integer> {
 
-	public List<AccountInformation> findByEmailLike(String email);
+	public AccountInformation findByEmail(String email);
 }
