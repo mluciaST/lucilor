@@ -1,7 +1,6 @@
 package com.example.lucilor.services;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +17,7 @@ public class DeviceService {
     private DeviceRepository repo;
 
     // GET all
-    public List<Device> getDevices() {
+    public List<Device> findAll() {
         return repo.findAll();
     }
 
@@ -27,30 +26,28 @@ public class DeviceService {
     }
 
     // GET by id
-    public DeviceModel findById(int id) {
-        DeviceModel device;
-        Optional<Device> temp = repo.findById(id);
-
-        if (temp.isPresent()) {
-            device = new DeviceModel(temp.get());
+    public DeviceModel findById(String id) {
+        DeviceModel devices;
+        Device temp = repo.findByPhoneNumber(id);
+        if (temp != null){
+            devices = new DeviceModel(temp);
         } else {
-            device = new DeviceModel();
+            devices = new DeviceModel();
         }
-
-        return device;
+ 
+        return devices;        
     }
 
     // UPDATE
-    public void updateDevice(int id, Device device) {
-        repo.save(device);
+    public Device updateDevice(Device device) {
+        return repo.save(device);
     }
 
     // DELETE device
-    public void deleteDevice(int id) {
-        repo.deleteById(id);
+    public int deleteDevice(String id) {
+        Device device = repo.findByPhoneNumber(id);
+        repo.delete(device);
+        return 0;
     }
 
-    public List<DeviceModel> findAll() {
-        return null;
-    }
 }

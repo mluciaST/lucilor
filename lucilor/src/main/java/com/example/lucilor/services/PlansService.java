@@ -33,4 +33,12 @@ public class PlansService {
        return plans;
     }
 
+    // Create plans
+    public Plans save(Plans plans) {
+        return repo.save(plans);
+    }
+
+    public void deletePlans(int id){
+        repo.deleteById(id);
+    }
 }

@@ -1,6 +1,7 @@
 package com.example.lucilor.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,19 +19,33 @@ public class AccountInformationService {
         return repo.findAll();
     }
 
+    public AccountInformationModel findById(int id)
+    {
+       AccountInformationModel plans;
+       Optional<AccountInformation> temp = repo.findById(id);
+       if (temp.isPresent()){
+            plans = new AccountInformationModel(temp.get());
+       } else {
+            plans = new AccountInformationModel();
+       }
+
+       return plans;
+    }
     // ADD account
     public AccountInformation save(AccountInformation account) {
         return repo.save(account);
     }
 
     // GET account info by email
-    public List<AccountInformation> findByEmailSimilar(String email) {
+    public AccountInformation findByEmailSimilar(String email) {
         return repo.findByEmail(email);
     }
 
     // UPDATE account
     public void updateAccount(String email, AccountInformation account) {
-        repo.save(account);
+        AccountInformation temp = findByEmailSimilar(email);
+        temp = account;
+        repo.save(temp);
     }
 
     // DELETE account
@@ -38,7 +53,7 @@ public class AccountInformationService {
         repo.deleteById(id);
     }
 
-    public List<AccountInformationModel> findAll() {
-        return null;
+    public List<AccountInformation> findAll() {
+        return repo.findAll();
     }
 }

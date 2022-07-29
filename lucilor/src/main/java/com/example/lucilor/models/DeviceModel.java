@@ -4,7 +4,7 @@ import com.example.lucilor.beans.Device;
 
 public class DeviceModel {
     private int plansNumber; // placeholder for the id
-	private int phoneNumber;
+	private String phoneNumber;
 	private String phoneModel;
 	private String phoneNickname;
 
@@ -20,7 +20,7 @@ public class DeviceModel {
         
     }
     
-    public DeviceModel(int plansNumber, int phoneNumber, String phoneModel, String phoneNickname) {
+    public DeviceModel(int plansNumber, String phoneNumber, String phoneModel, String phoneNickname) {
         super();
         this.plansNumber = plansNumber;
         this.phoneNumber = phoneNumber;
@@ -36,11 +36,11 @@ public class DeviceModel {
         this.plansNumber = plansNumber;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

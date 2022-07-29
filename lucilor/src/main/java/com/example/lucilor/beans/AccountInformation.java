@@ -31,9 +31,7 @@ public class AccountInformation {
 	@Column
     private String lastName;
 	@Column
-    private int phoneNumber;
-	@Column
-    private int plans;
+    private String phoneNumber;
 	@Column
     private String state;
 	@Column
@@ -47,7 +45,7 @@ public class AccountInformation {
     }
 
     public AccountInformation(int accountNumber, String addressLine1, String addressLine2, String city,
-            LocalDate dateOfBirth, String email, String firstName, String lastName, int phoneNumber, int plans,
+            LocalDate dateOfBirth, String email, String firstName, String lastName, String phoneNumber, 
             String state, int zip) {
         super();
         this.accountNumber = accountNumber;
@@ -59,7 +57,6 @@ public class AccountInformation {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
-        this.plans = plans;
         this.state = state;
         this.zip = zip;
     }
@@ -138,24 +135,16 @@ public class AccountInformation {
         return lastName;
     }
 
-    public void setLastname(String lastName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
-
-    public int getPlans() {
-        return plans;
-    }
-
-    public void setPlans(int plans) {
-        this.plans = plans;
     }
 
     public String getState() {
@@ -173,14 +162,6 @@ public class AccountInformation {
     public void setZip(int zip) {
         this.zip = zip;
     }
-
-	@Override
-	public String toString() {
-		return "AccountInformation [accountNumber=" + accountNumber + ", addressLine1=" + addressLine1
-				+ ", addressLine2=" + addressLine2 + ", city=" + city + ", dateOfBirth=" + dateOfBirth + ", email="
-				+ email + ", firstName=" + firstName + ", lastName=" + lastName + ", phoneNumber=" + phoneNumber
-				+ ", plans=" + plans + ", state=" + state + ", zip=" + zip + "]";
-	}
 
     
 }

@@ -2,8 +2,6 @@ package com.example.lucilor.beans;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import com.example.lucilor.models.DeviceModel;
@@ -12,8 +10,8 @@ import com.example.lucilor.models.DeviceModel;
 @Table
 public class Device {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int phoneNumber;
+    @Column
+    private String phoneNumber;
 	@Column
     private String phoneModel;
 	@Column
@@ -23,7 +21,7 @@ public class Device {
 
     public Device() {}
 
-    public Device(int plansNumber, int phoneNumber, String phoneModel, String phoneNickname) {
+    public Device(int plansNumber, String phoneNumber, String phoneModel, String phoneNickname) {
         super();
         this.plansNumber = plansNumber;
         this.phoneNumber = phoneNumber;
@@ -46,11 +44,11 @@ public class Device {
         this.plansNumber = plansNumber;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

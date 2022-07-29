@@ -31,11 +31,17 @@ public class AccountInformationController {
 	private static final Logger logger = Logger.getLogger(AccountInformationController.class);
 
 	@GetMapping
-	public ResponseEntity<List<AccountInformationModel>> findAll() {
-		List<AccountInformationModel> models = accountInfoService.findAll();
+	public ResponseEntity<List<AccountInformation>> findAll() {
+		List<AccountInformation> models = accountInfoService.findAll();
 		logger.debug("Retrieved Models: " + models);
 
-		return new ResponseEntity<List<AccountInformationModel>>(models, HttpStatus.OK);
+		return new ResponseEntity<List<AccountInformation>>(models, HttpStatus.OK);
+	}
+
+	// VIEW by id
+	@GetMapping("/{id}")
+	public ResponseEntity<AccountInformationModel> findById(@PathVariable(value = "id") int id) {
+		return new ResponseEntity<AccountInformationModel>(accountInfoService.findById(id), HttpStatus.OK);
 	}
 
 	@PostMapping

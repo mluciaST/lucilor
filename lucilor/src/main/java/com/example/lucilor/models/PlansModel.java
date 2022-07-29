@@ -12,30 +12,34 @@ public class PlansModel {
     private double planCost;
     private String planName;
     
+    public PlansModel() {super();}
 
-    public PlansModel() {
-    	super();
-    }
-    
-    public PlansModel(Plans plans) {
-    	this.plansNumber = plans.getPlansNumber();
-    	this.cloudStorage = plans.getCloudStorage();
-    	this.description = plans.getDescription();
-    	this.mobileHotspotData = plans.getMobileHotspotData();
-    	this.networkAccess = plans.getNetworkAccess();
-    	this.planCost = plans.getPlanCost();
-    	this.planName = plans.getPlanName();
-    }
-
-    public PlansModel(int cloudStorage, String description, int mobileHotspotData, int networkAccess,
-            double planCost, String planName, int plansNumber) {
-        super();
+    public PlansModel(int plansNumber, int cloudStorage, String description, int mobileHotspotData, int networkAccess,
+            double planCost, String planName) {
+        this.plansNumber = plansNumber;
         this.cloudStorage = cloudStorage;
         this.description = description;
         this.mobileHotspotData = mobileHotspotData;
         this.networkAccess = networkAccess;
         this.planCost = planCost;
         this.planName = planName;
+    }
+
+    public PlansModel(Plans plans){
+        this.plansNumber = plans.getPlansNumber();
+        this.cloudStorage = plans.getCloudStorage();
+        this.description = plans.getDescription();
+        this.mobileHotspotData = plans.getMobileHotspotData();
+        this.networkAccess = plans.getNetworkAccess();
+        this.planCost = plans.getPlanCost();
+        this.planName = plans.getPlanName();
+    }
+
+    public int getPlansNumber() {
+        return plansNumber;
+    }
+
+    public void setPlansNumber(int plansNumber) {
         this.plansNumber = plansNumber;
     }
 
@@ -86,19 +90,8 @@ public class PlansModel {
     public void setPlanName(String planName) {
         this.planName = planName;
     }
+    
+    
 
-    public int getPlansNumber() {
-        return plansNumber;
-    }
-
-    public void setPlansNumber(int plansNumber) {
-        this.plansNumber = plansNumber;
-    }
-
-	@Override
-	public String toString() {
-		return "Plans [plansNumber=" + plansNumber + ", cloudStorage=" + cloudStorage + ", description=" + description
-				+ ", mobileHotspotData=" + mobileHotspotData + ", networkAccess="
-				+ networkAccess + ", planCost=" + planCost + ", planName=" + planName + "]";
-	}
+    
 }

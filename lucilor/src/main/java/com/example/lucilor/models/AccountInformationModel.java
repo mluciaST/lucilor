@@ -13,7 +13,7 @@ public class AccountInformationModel {
 	private String email;
 	private String firstName;
 	private String lastName;
-	private int phoneNumber;
+	private String phoneNumber;
 	private String state;
 	private int zip;
 
@@ -36,7 +36,7 @@ public class AccountInformationModel {
     }
 
     public AccountInformationModel(int accountNumber, String addressLine1, String addressLine2, String city,
-            LocalDate dateOfBirth, String email, String firstName, String lastName, int phoneNumber,
+            LocalDate dateOfBirth, String email, String firstName, String lastName, String phoneNumber,
             String state, int zip) {
         super();
         this.accountNumber = accountNumber;
@@ -112,15 +112,15 @@ public class AccountInformationModel {
         return lastName;
     }
 
-    public void setLastname(String lastName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -140,13 +140,7 @@ public class AccountInformationModel {
         this.zip = zip;
     }
 
-	@Override
-	public String toString() {
-		return "AccountInformation [accountNumber=" + accountNumber + ", addressLine1=" + addressLine1
-				+ ", addressLine2=" + addressLine2 + ", city=" + city + ", dateOfBirth=" + dateOfBirth + ", email="
-				+ email + ", firstName=" + firstName + ", lastName=" + lastName + ", phoneNumber=" + phoneNumber
-				+ ", state=" + state + ", zip=" + zip + "]";
-	}
+
 
     
 }
