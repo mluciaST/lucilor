@@ -19,6 +19,10 @@ public class AccountInformationService {
         return repo.findAll();
     }
 
+    public AccountInformationModel findByEmail(String email){
+        return new AccountInformationModel(repo.findByEmail(email));
+    }
+    
     public AccountInformationModel findById(int id)
     {
        AccountInformationModel plans;
@@ -36,14 +40,9 @@ public class AccountInformationService {
         return repo.save(account);
     }
 
-    // GET account info by email
-    public AccountInformation findByEmailSimilar(String email) {
-        return repo.findByEmail(email);
-    }
-
     // UPDATE account
     public void updateAccount(String email, AccountInformation account) {
-        AccountInformation temp = findByEmailSimilar(email);
+        AccountInformation temp = new AccountInformation(findByEmail(email));
         temp = account;
         repo.save(temp);
     }

@@ -38,10 +38,10 @@ public class AccountInformationController {
 		return new ResponseEntity<List<AccountInformation>>(models, HttpStatus.OK);
 	}
 
-	// VIEW by id
-	@GetMapping("/{id}")
-	public ResponseEntity<AccountInformationModel> findById(@PathVariable(value = "id") int id) {
-		return new ResponseEntity<AccountInformationModel>(accountInfoService.findById(id), HttpStatus.OK);
+	// Get By Email
+	@GetMapping("/{email}")
+	public ResponseEntity<AccountInformationModel> findByEmail(@PathVariable(value = "email") String email) {
+		return new ResponseEntity<AccountInformationModel>(accountInfoService.findByEmail(email), HttpStatus.OK);
 	}
 
 	@PostMapping

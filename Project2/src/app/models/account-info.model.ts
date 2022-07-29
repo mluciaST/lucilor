@@ -28,7 +28,7 @@ export class AccountInfo {
             this.addressLine1 = addressLine1;
             this.addressLine2 = addressLine2;
             this.city = city;
-            this.dateOfBirth = dateOfBirth;
+            this.dateOfBirth =  new Date(dateOfBirth);
             this.email = email;
             this.firstName = firstName;
             this.lastName = lastName;

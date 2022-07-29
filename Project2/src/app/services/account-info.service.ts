@@ -11,20 +11,24 @@ export class AccountInfoService {
 
   constructor(private http: HttpClient) { }
 
- 
-    findAll(email: String): Observable<HttpResponse<AccountInfo>> {
-      return this.http.get<AccountInfo>(this.url + `/${email}`, { observe: 'response' });
+
+    findAll(): Observable<HttpResponse<AccountInfo>> {
+      return this.http.get<AccountInfo>(this.url, { observe: 'response' });
+    }
+
+    findByEmail(email: string): void {
+      this.http.get<AccountInfo>(this.url + `/${email}`, { observe: 'response'})
     }
 
     save(accountInfo: AccountInfo): Observable<HttpResponse<AccountInfo>> {
       return this.http.post<AccountInfo>(this.url, accountInfo, { observe: 'response'});
     }
 
-    updateAccount(accountPlans: AccountInfo): Observable<HttpResponse<AccountInfo>> {
-      return this.http.put<AccountInfo>(this.url, accountPlans, { observe: 'response' });
+    updateAccount(accountInfo: AccountInfo): Observable<HttpResponse<AccountInfo>> {
+      return this.http.put<AccountInfo>(this.url, accountInfo, { observe: 'response' });
     }
 
-    deletAccount(email: String): void {
-      this.http.delete<AccountInfo>(this.url + `/${email}`, { observe: 'response'})
+    deleteAccount(id: number): void {
+      this.http.delete<AccountInfo>(this.url + `/${id}`, { observe: 'response'})
     }
 }
