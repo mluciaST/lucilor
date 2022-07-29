@@ -1,7 +1,6 @@
 import { Component, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { GoogleApiService, UserInfo } from './google-api.service';
-import { AccountInfo } from './models/account-info.model';
 import { AccountInfoService } from './services/account-info.service';
 
 @Component({
@@ -12,9 +11,6 @@ import { AccountInfoService } from './services/account-info.service';
 
 export class AppComponent {
   userInfo?: UserInfo
-  email?: string =  this.userInfo?.info.email;
-  accounts : AccountInfo[] = [];
-  selectedAccount ?: AccountInfo;
 
   title = 'Project2';
   constructor(private readonly googleApi: GoogleApiService, private accountService: AccountInfoService, private router: Router){

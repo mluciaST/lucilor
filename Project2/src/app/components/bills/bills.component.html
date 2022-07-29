@@ -1,37 +1,22 @@
 <h1>My Bill</h1>
 <div class="row">
-    <div class="col-4">
-        <img style="width: 100%;" alt="piechart" src="../../assets/temp.png">
-    </div>
-    <div class="col-8">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">Plan Name</th>
-                    <th scope="col">Amount</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Plan 1</td>
-                    <td>$##</td>
-                </tr>
-                <tr>
-                    <td>Plan 2</td>
-                    <td>$##</td>
-                </tr>
-                <tr>
-                    <td>Discounts</td>
-                    <td>$##</td>
-                </tr>
-            </tbody>
-        </table>
+  <table class="table table-striped">
+    <thead>
+        <tr>
+          <th scope="col">Plan Name</th>
+          <th scope="col">Cost</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let plan of plans">
+          <td>{{plan.plansName}}</td>
+          <td>{{plan.planCost}}</td>
+        </tr>
 
-        <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end">
-            <div class="col-4"> 
-                <button class="Button">Pay Now</button>
-            </div>
-        </div>
-           
-    </div>
+        <tr>
+          <td><b>Total Cost</b></td>
+          <td><b>229.97</b></td>
+        </tr>
+      </tbody>
+</table>
 </div>

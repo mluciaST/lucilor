@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { MyAccount } from 'src/app/Mock_Data/MyAccount';
-// import { ACCOUNTINFO } from 'src/app/Mock_Data/accountData';
-import { AppComponent } from 'src/app/app.component';
+import { accounts } from '../mock-data/savedAccounts';
 
 @Component({
   selector: 'app-account-info',
@@ -9,12 +7,12 @@ import { AppComponent } from 'src/app/app.component';
   styleUrls: ['./account-info.component.css']
 })
 export class AccountInfoComponent implements OnInit {
-  //accounts: MyAccount[] = ACCOUNTINFO;
-   
-  //email: String ;
-  constructor(private email: String) { }
+  myAccount = accounts[1];
+  constructor() { }
 
   ngOnInit(): void {
+    console.log(this.myAccount);
   }
+
 
 }

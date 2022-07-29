@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 // import { MYPLANS } from 'src/app/Mock_Data/planData';
 import { Plans } from 'src/app/models/plans.model';
 import { PlansService } from 'src/app/services/plans.service';
+import { individual_plans } from '../mock-data/individual-plans';
+import { plans } from '../mock-data/PLANS';
 
 @Component({
   selector: 'app-individual-plans',
@@ -11,33 +13,10 @@ import { PlansService } from 'src/app/services/plans.service';
   styleUrls: ['./individual-plans.component.css']
 })
 export class IndividualPlansComponent implements OnInit {
-  //plans: MyPlans[] = MYPLANS;
+  plans: plans[] = individual_plans;
 
-  plans: Plans = new Plans(60, "", 40, 15, 49.99, "Individual Plan", 1);
-  //id: number;
-
-  constructor(private plansService: PlansService, private router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
-    let resp = this.plansService.getPlans().subscribe((data) => {
-      if(data.body != null) {
-        //this.plans = data.body;
-      }
-    });
   }
-
-  public save(): void {
-    this.plansService.save(this.plans).subscribe(data => {
-      let route = this.router.config.find(r => r.path === 'plans');
-      if (route) {
-        this.router.navigateByUrl('/plans');
-      }
-    });
-  }
-  
-  deletePlan(id: number): void {
-    let resp = this.plansService.deletePlan(id);
-    //resp.subscribe((data) => this.plans = data);
-  }
-
 }

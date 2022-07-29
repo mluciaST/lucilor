@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Plans } from 'src/app/models/plans.model';
-import { PlansService } from 'src/app/services/plans.service';
-// import { MyPlans } from 'src/app/Mock_Data/MyPlans';
-// import { MYPLANS } from 'src/app/Mock_Data/planData';
+import { plans } from '../mock-data/PLANS';
+import { my_plans} from '../mock-data/my-plans';
 
 @Component({
   selector: 'app-my-plans',
@@ -11,17 +8,18 @@ import { PlansService } from 'src/app/services/plans.service';
   styleUrls: ['./my-plans.component.css']
 })
 export class MyPlansComponent implements OnInit {
-  //plans: MyPlans[] = MYPLANS;
-  plans: Plans = new Plans(0, "", 0, 0, 0, "", 0);
-
-  constructor(private plansService: PlansService, private router: Router) { }
+  plans: plans[] = my_plans;
+  hideDevices: boolean = true;
+  constructor() { }
 
   ngOnInit(): void {
-    let resp = this.plansService.getPlans().subscribe((data) => {
-      if(data.body != null) {
-        //this.plans = data.body;
-      }
-    });
   }
 
+  toggleDevices(){
+    this.hideDevices = !this.hideDevices;
+  }
+
+  removePlan(){
+    console.log("remove");
+  }
 }
