@@ -18,4 +18,13 @@ export class PlansService {
   findById(id: number): Observable<HttpResponse<Plans>> {
     return this.http.get<Plans>(this.url + `/${id}`, { observe: 'response' });
   }
+
+  //create plan
+  save(plans: Plans): Observable<HttpResponse<Plans>> {
+    return this.http.post<Plans>(this.url, plans, { observe: 'response'});
+  }
+
+  deletePlan(id: number): void {
+    this.http.delete<Plans>(this.url + `/${id}`, { observe: 'response'})
+  }
 }

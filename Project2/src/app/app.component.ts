@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { GoogleApiService, UserInfo } from './google-api.service';
 import { AccountInfo } from './models/account-info.model';
@@ -9,6 +9,7 @@ import { AccountInfoService } from './services/account-info.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   userInfo?: UserInfo
   email?: string =  this.userInfo?.info.email;

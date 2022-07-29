@@ -23,7 +23,7 @@ export class DeviceService {
     return this.http.post<Device>(this.url, accountPlans, { observe: 'response' });
   }
 
-  deletDevice(id: number): void {
+  deleteDevice(id: number): void {
     this.http.delete<Device>(this.url + `/${id}`, { observe: 'response'})
   }
 }
